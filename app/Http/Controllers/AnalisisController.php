@@ -206,7 +206,10 @@ class AnalisisController extends Controller
         }
         return $sumOfSquares / ($n - 1); // Menggunakan Varians Sampel (N-1)
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8aa9054 (Pesan commit pertama saya)
     /**
      * Display the specified resource.
      */
