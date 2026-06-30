@@ -52,6 +52,8 @@ class RegisteredUserController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
+            $userCreated->assignRole('responden');
+
             // Simpan ke tabel responden, hubungkan user_id ke primary id users baru
             Responden::create([
                 'user_id' => $userCreated->id,

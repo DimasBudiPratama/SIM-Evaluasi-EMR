@@ -10,6 +10,7 @@ use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RespondenController;
 use App\Http\Controllers\RiwayatController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,23 @@ Route::get('/', [LandingController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/users', [UserController::class, 'index'])->name('setting.index');
+    Route::put('/users/{id}', [UserController::class, 'updateUser'])->name('users.update');
+    Route::delete('/users/{id}', [UserController::class, 'destroyUser'])->name('users.destroy');
+
+    Route::post('/roles/', [UserController::class, 'storeRoles'])->name('roles.store');
+    Route::put('/roles/{id}', [UserController::class, 'updateRoles'])->name('roles.update');
+    Route::delete('/roles/{id}', [UserController::class, 'destroyRoles'])->name('roles.destroy');
+
+    Route::post('/permissions/', [UserController::class, 'storePermissions'])->name('permissions.store');
+    Route::put('/permissions/{id}', [UserController::class, 'updatePermissions'])->name('permissions.update');
+    Route::delete('/permissions/{id}', [UserController::class, 'destroyPermissions'])->name('permissions.destroy');
+
+    Route::put('/roles/{id}/permissions', [UserController::class, 'updateAssign'])->name('Assignpermissions.update');
+
+
+
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

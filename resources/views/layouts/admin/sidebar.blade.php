@@ -10,51 +10,67 @@
     </div>
 
     <nav class="sidebar-nav">
-        <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}"
-            {!! request()->routeIs('dashboard') ? 'aria-current="page"' : '' !!}>
-            <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
-            <span class="nav-text">Dashboard</span>
-        </a>
+        @can('dashboard')
+            <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}"
+                {!! request()->routeIs('dashboard') ? 'aria-current="page"' : '' !!}>
+                <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+        @endcan
 
-        <a class="nav-link {{ request()->routeIs('kuesioner-pieces.*') ? 'active' : '' }}"
-            href="{{ route('kuesioner-pieces.index') }}">
-            <span class="nav-icon"><i class="bi bi-list-check" aria-hidden="true"></i></span>
-            <span class="nav-text">Kuesioner PIECES</span>
-        </a>
+        @can('kuesioner-pieces')
+            <a class="nav-link {{ request()->routeIs('kuesioner-pieces.*') ? 'active' : '' }}"
+                href="{{ route('kuesioner-pieces.index') }}">
+                <span class="nav-icon"><i class="bi bi-list-check" aria-hidden="true"></i></span>
+                <span class="nav-text">Kuesioner PIECES</span>
+            </a>
+        @endcan
 
-        <a class="nav-link {{ request()->routeIs('kuesioner-tam.*') ? 'active' : '' }}"
-            href="{{ route('kuesioner-tam.index') }}">
-            <span class="nav-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
-            <span class="nav-text">Kuesioner TAM</span>
-        </a>
+        @can('kuesioner-tam')
+            <a class="nav-link {{ request()->routeIs('kuesioner-tam.*') ? 'active' : '' }}"
+                href="{{ route('kuesioner-tam.index') }}">
+                <span class="nav-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
+                <span class="nav-text">Kuesioner TAM</span>
+            </a>
+        @endcan
 
-        <a class="nav-link {{ request()->routeIs('riwayat.*') ? 'active' : '' }}" href="{{ route('riwayat.index') }}">
-            <span class="nav-icon"><i class="bi bi-clock-history" aria-hidden="true"></i></span>
-            <span class="nav-text">Riwayat</span>
-        </a>
+        @can('riwayat')
+            <a class="nav-link {{ request()->routeIs('riwayat.*') ? 'active' : '' }}" href="{{ route('riwayat.index') }}">
+                <span class="nav-icon"><i class="bi bi-clock-history" aria-hidden="true"></i></span>
+                <span class="nav-text">Riwayat</span>
+            </a>
+        @endcan
 
-        <a class="nav-link {{ request()->routeIs('responden.*') ? 'active' : '' }}"
-            href="{{ route('responden.index') }}">
-            <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
-            <span class="nav-text">Responden</span>
-        </a>
+        @can('responden')
+            <a class="nav-link {{ request()->routeIs('responden.*') ? 'active' : '' }}"
+                href="{{ route('responden.index') }}">
+                <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
+                <span class="nav-text">Responden</span>
+            </a>
+        @endcan
 
-        <a class="nav-link {{ request()->routeIs('pertanyaan.*') ? 'active' : '' }}"
-            href="{{ route('pertanyaan.index') }}">
-            <span class="nav-icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>
-            <span class="nav-text">Pertanyaan</span>
-        </a>
+        @can('pertanyaan')
+            <a class="nav-link {{ request()->routeIs('pertanyaan.*') ? 'active' : '' }}"
+                href="{{ route('pertanyaan.index') }}">
+                <span class="nav-icon"><i class="bi bi-question-circle" aria-hidden="true"></i></span>
+                <span class="nav-text">Pertanyaan</span>
+            </a>
+        @endcan
 
-        <a class="nav-link {{ request()->routeIs('analisis.*') ? 'active' : '' }}"
-            href="{{ route('analisis.index') }}">
-            <span class="nav-icon"><i class="bi bi-sliders" aria-hidden="true"></i></span>
-            <span class="nav-text">Analisis</span>
-        </a>
+        @can('analisis')
+            <a class="nav-link {{ request()->routeIs('analisis.*') ? 'active' : '' }}"
+                href="{{ route('analisis.index') }}">
+                <span class="nav-icon"><i class="bi bi-sliders" aria-hidden="true"></i></span>
+                <span class="nav-text">Analisis</span>
+            </a>
+        @endcan
 
-        <a class="nav-link {{ request()->routeIs('laporan.*') ? 'active' : '' }}" href="{{ route('laporan.index') }}">
-            <span class="nav-icon"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></span>
-            <span class="nav-text">Laporan</span>
-        </a>
+        @can('laporan')
+            <a class="nav-link {{ request()->routeIs('laporan.*') ? 'active' : '' }}" href="{{ route('laporan.index') }}">
+                <span class="nav-icon"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></span>
+                <span class="nav-text">Laporan</span>
+            </a>
+        @endcan
     </nav>
 
     <div class="sidebar-footer">

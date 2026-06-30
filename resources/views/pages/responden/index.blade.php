@@ -35,7 +35,7 @@
                         </tr>
                     </thead>
                     <tbody class="text-dark" style="font-size: 0.88rem;">
-                        @forelse($responden as $index => $item)
+                        @foreach ($responden as $index => $item)
                             <tr class="border-bottom border-light">
                                 <td class="py-3 px-3 text-center text-muted fw-medium">{{ $index + 1 }}</td>
                                 <td class="py-3"><span class="fw-bold text-dark">{{ $item->nama }}</span></td>
@@ -73,18 +73,7 @@
                                     </div>
                                 </td>
                             </tr>
-                        @empty
-                            <tr>
-                                <td colspan="7" class="text-center py-5 text-muted">
-                                    <div class="avatar avatar-lg bg-light text-muted mb-3 mx-auto"
-                                        style="width: 55px; height: 55px; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
-                                        <i class="bi bi-folder-x fs-3"></i>
-                                    </div>
-                                    <h6 class="text-dark fw-bold mb-1">Data Kosong</h6>
-                                    <p class="text-muted small mb-0">Belum ada data responden terdaftar di dalam sistem.</p>
-                                </td>
-                            </tr>
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>

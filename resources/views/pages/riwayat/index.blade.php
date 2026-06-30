@@ -59,13 +59,13 @@
                     <button class="nav-link active px-4 py-2.5" id="pieces-tab" data-bs-toggle="tab"
                         data-bs-target="#pieces-panel" type="button" role="tab" aria-controls="pieces-panel"
                         aria-selected="true">
-                        <i class="bi bi-list-check me-2"></i>INSTRUMEN PIECES
+                        <i class="bi bi-list-check me-2"></i>PIECES
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link px-4 py-2.5" id="tam-tab" data-bs-toggle="tab" data-bs-target="#tam-panel"
                         type="button" role="tab" aria-controls="tam-panel" aria-selected="false">
-                        <i class="bi bi-shield-check me-2"></i>INSTRUMEN TAM
+                        <i class="bi bi-shield-check me-2"></i>TAM
                     </button>
                 </li>
             </ul>

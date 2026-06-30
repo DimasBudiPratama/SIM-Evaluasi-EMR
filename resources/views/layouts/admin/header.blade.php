@@ -29,6 +29,11 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2">
                     <li>
+                        @can('setting')
+                            <a class="dropdown-item" href="{{ route('setting.index') }}">
+                                <i class="bi bi-user me-2"></i>Setting
+                            </a>
+                        @endcan
                         <a class="dropdown-item text-danger small py-2" href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <i class="bi bi-box-arrow-right me-2"></i>Sign out
